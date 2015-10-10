@@ -7,7 +7,8 @@
 #define PROBE_RANGE 150 // relevant distance for the sensor ( in cm )
 
 // feedback calc. parameters
-#
+
+// TODO - testare come potrebbe migliorare la performance con l'uso della interrupt
 
 // init the Maxbotix to listen on the probe pin
 Maxbotix rangeSensorPW(PROBE_PIN, Maxbotix::PW, Maxbotix::LV);
