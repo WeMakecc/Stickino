@@ -1,0 +1,38 @@
+/*
+     ---------- Arduino -----        
+     |   |
+    +5V.  D2 
+     |   |
+     |   |
+     |   ---/\/\/\----- GND
+     |   |  10 KOhm
+     |   |
+                                         
+     =====          
+       ^
+       |
+      push  
+     button
+*/
+
+
+
+const int  onoffSwitchPIN =  9;    // the pin that the ROUND pushbutton is attached to
+
+
+void setup()
+{
+  pinMode(onoffSwitchPIN, INPUT);
+}
+
+
+void loop()
+{
+  ...
+  
+  if(digitalRead(onoffSwitchPIN)){  //  pushbutton ON
+     ... //  do measure and vibe
+   }
+
+
+}
