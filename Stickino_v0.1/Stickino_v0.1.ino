@@ -59,12 +59,22 @@ void sendVibeFeed(int distanceCm){
   if (distanceCm < 150){
     // check id the feedback has been sent
     if(sendingViber == false){
-      durationPause = (int(distanceCm / 5) + 1) * 50 ;
+      
+      if(distanceCm < 50){
+        durationPause = (int(distanceCm / 5) + 1) * 25;
+      }else if(distanceCm > 50 && distanceCm < 70 ){
+        durationPause = (int(distanceCm / 5) + 1) * 45;
+      }else{
+        durationPause = (int(distanceCm / 5) + 1) * 65;  
+      }
     }else{
+      //durationViber = 500;
       if(distanceCm < 50){
         durationViber = (int(distanceCm / 5) + 1) * 50;
+      }else if(distanceCm > 50 && distanceCm < 70 ){
+        durationViber = (int(distanceCm / 5) + 1) * 60;
       }else{
-        durationViber = (int(distanceCm / 5) + 1) * 25;
+        durationViber = 400;//(int(distanceCm / 5) + 1) * 55;  
       }
     }
     if(sendingViber == false && (millis() - endViber) > durationPause){
